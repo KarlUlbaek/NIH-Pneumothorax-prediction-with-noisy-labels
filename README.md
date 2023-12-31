@@ -2,9 +2,8 @@
 
 The code is based on Ninas repo and in particular her "prediction.py" i.e. her training loop.
 
-The code is pure spaghetti as I spend no time to clean it up and will most likely 
-not run on your machine without a bit of tinkering. The reason is simple: I spend way too much time as is
-and do not intend spend time on cleaning code and making sure it is reproducible on other machines when I 
+The code is pure spaghetti as I spend next to no time cleaning and refactoring it and it will most likely 
+not run on your machine without a bit of tinkering. The reason is simple: I do not intend spend time on cleaning code and making sure it is reproducible on other machines when I 
 doubt that anyone is actually gonna want to run in anyway. However if it is the case that you are interested
 in running my code ill gladly help out explaining it or making it run.
 
@@ -19,7 +18,8 @@ only contains 4 placeholder images.
 \Nina repo\prediction\disease_prediction_ALL.py implements the main training loops and supports all
 methods described in the report depending on which flag is set. For instance "method=mixup".
 
-\Nina repo\prediction\gmm_and_mix_class.py implements gmm, mixup and gmm with mixup
+\Nina repo\prediction\gmm_and_mix_class.py implements the baseline, gmm, mixup and gmm with mixup, as well as
+having support for filtering out noisy data as determined by confident learning.
 
 \Nina repo\prediction\CL_kfold.ipynb is based on an older version of "disease_prediction_ALL.py" and 
 performs 5-fold cross validation and stores the results which subsequently are intended to be used in 
@@ -31,10 +31,8 @@ list variables. They may then
 be imported as global variables and used in the training in "\Nina repo\prediction\disease_prediction_ALL.py"
 to omit (or invert the labels) of said IDS in the training.
 
-
 \Nina repo\prediction\models.py contains the convnext model imported from hugginface and adapted.
 
-NIH Pneumothorax prediction with noisy labels
 
 
 
